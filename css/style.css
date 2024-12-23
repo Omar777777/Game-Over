@@ -1,0 +1,241 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --body-background-color: rgb(39, 43, 48);
+    --links-color: #09c;
+    --description-color:rgb(119, 121, 124);
+}
+
+body{
+    background-color: var(--body-background-color);
+}
+
+header {
+    img{
+        height: 30vh;
+        object-fit: cover;
+    }
+}
+
+nav{
+    background-color: rgb(58, 73, 123);
+    box-shadow: 0 0 10px rgb(0 0 0 / 0.7);
+    margin-top: -30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 99999;
+
+    .mylogo{
+        cursor:text;
+
+        img{
+            width: 40px;
+            cursor: default;
+        }
+        span{
+            color: white;
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+
+    .navbar-toggler{
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+}
+
+  .nav-link {
+      color: white;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+  }
+
+.nav-link:focus,
+.nav-link:hover {
+    color: var(--links-color);
+}
+
+.active {
+    color: var(--links-color);
+}
+
+
+/* cards style */
+
+
+
+.card{
+    cursor: pointer;
+    background-color: transparent;
+    background-color: var(--body-background-color);
+    transition: all 0.5s;
+    border: 1px solid rgb(26, 25, 25);
+    filter: grayscale(0.7);
+
+ 
+
+    &:hover{
+        transform: scale(1.04,1.04);
+        filter: grayscale(0);
+    }
+
+    .card-title{
+
+
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    }
+
+    .my-btn{
+        background-color: var(--links-color);
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .card-text{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: var(--description-color);
+        min-height: 80px;
+        max-height: 80px;
+        overflow: hidden;
+    }
+
+    footer{
+        border-top: 1px solid rgb(26, 25, 25);
+        .my-p{
+            padding: 5px;
+            font-weight: 700;
+            font-size: 11px;
+            line-height: 21px;
+            color: white;
+            background-color: rgb(41, 45, 48);
+            border-radius: 13px;
+            margin-top: 7px;
+        }
+    }
+    .layer{
+        
+        color: transparent;
+    }
+}
+
+
+
+.loader {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #FFF;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+.loader-container{
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999999999999999999999999999999;
+    background-color: rgba(39, 43, 48,0.8);
+}
+
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border-left: 4px solid #FF3D00;
+    border-bottom: 4px solid transparent;
+    animation: rotation 0.5s linear infinite reverse;
+}
+
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* we will set (html scrollbar style with the main screen and hide with description screen)     and 
+                (.descreption scrollbar style with description screen and hid in main screen)*/
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: rgba(46, 45, 45, 0.6);
+
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+
+
+.descreption{
+    z-index: 999999;
+    background-color: var(--body-background-color);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+}
+
+.Detailes-nav{
+    margin-top: 30px;
+    background-color: transparent;
+    box-shadow: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.btn-close {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgba(219, 212, 212, 0.57)'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e");
+}
+.btn-close:focus {
+    box-shadow: 0 0 10px rgb(0 0 0 / 0.7);
+
+}
+
+.desc-text{
+    span{
+        color: black;
+        padding: 3px;
+        border-radius: 9px;
+        background-color: var(--links-color);
+    }
+}
+
+.btn-outline-warning {
+    color: white;
+}
+.btn-check:focus+.btn-outline-warning,
+.btn-outline-warning:focus {
+    box-shadow: none
+}
